@@ -1,11 +1,13 @@
 <?php
-
+echo "hola";
+require_once('loginManager.php');
 
 
 if(!empty($_POST['email']) && !empty($_POST['password'])){
     echo "bien";
-    #validate();
+    validate();
 }
 else{
     echo "error";
 }
+
