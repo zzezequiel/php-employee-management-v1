@@ -16,7 +16,7 @@
         <main>
             <h1>Dashboard</h1>
             <!--display employees-->
-            <div class="container-lg" id="cont-employee">
+            <div class="bg-body rounded shadow-sm container-xl" id="cont-employee">
                 
             </div>
         </main>
