@@ -14,16 +14,16 @@ function validate(){
   
     $emailServer = ($dataDecode["users"][0]["email"]);
     $passwordServer = ($dataDecode["users"][0]["password"]);
-    
-    if($emailInput === $emailServer && password_verify($passwordInput, $passwordServer)){  #password_verify = decrypt $passwordServer
+
+        
+   // if($emailInput === $emailServer && password_verify($passwordInput, $passwordServer)){  #password_verify = decrypt $passwordServer
         header('location:../dashboard.php');
+   // }
+   //else{
+    //    header('location:../../index.php?status=error');
+       // echo "error";
         
-    }
-   else{
-        header('location:../../index.php?name=error');
-        echo "error";
-        
-    }
+ //   }
    
 }
 

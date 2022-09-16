@@ -1,4 +1,17 @@
+<?php 
 
+if(isset($_GET['status'])){
+    if($_GET['status']=='error'){
+        echo "<div class='alert alert-danger alert-dismissible fade show'>
+        <strong>Error!</strong> Incorrect credentials.
+        <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+    </div>
+";
+
+
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,10 +24,10 @@
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-   <?php require_once("src\library\loginController.php")?>
+   <?php require_once("src\library\loginController.php");?>
   </head>
   <body class="text-center position-absolute top-50 start-50 translate-middle">
-    <div><?php validate()?></div>
+  
     
         <main class="form-signin">
             <form action="http://localhost/php-employee-management-v1/src/library/loginController.php" method="POST">
