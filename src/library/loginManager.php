@@ -1,21 +1,28 @@
 <?php 
 
-require_once('loginController.php');
+#require_once('loginController.php');
 
 
 function validate(){
 
-    echo "json";
-    $user = $_POST['email'];
-    $password = $_POST['password'];
-
     $data = file_get_contents('../../resources/users.json');
-   
 
-    $user = json_decode($data, true);
-   // print_r($user);
-   //var_dump($user);
-    echo ($user["users"][0]["name"]);
-   // print_r($user{"users"}{"userId"});
+    $emailInput = $_POST['email'];
+    $passwordInput = $_POST['password'];
+  
+    $dataDecode = json_decode($data, true); #transform users obj to array
+  
+    $emailServer = ($dataDecode["users"][0]["email"]);
+    $passwordServer = ($dataDecode["users"][0]["password"]);
+    
+    if($emailInput === $emailServer && password_verify($passwordInput, $passwordServer)){  #password_verify = decrypt $passwordServer
+        header('location:../dashboard.php');
+        
+    }
+    else{
+        header('location:../../index.php');
+        
+        
+    }
+   
 }
-?>
