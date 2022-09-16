@@ -1,7 +1,5 @@
-
 const employees = [];
-
-let i=0;
+const containerRows = document.getElementById("cont-employee");
 
 
     let data = fetch("../resources/employees.json")
@@ -10,10 +8,13 @@ let i=0;
     })
         .then(jsondata => {
             for(let e = 0;e<jsondata.length;e++){
-                employees.push(jsondata[e]);
+                employees.push(jsondata[e]); //fill employees array
               
-                
-                console.log(employees[e].name);
+                let employRow = document.createElement("div");  //create article for 10 times
+                //employRow.className = "col";
+                containerRows.appendChild(employRow); //add to div claas container1 
+                employRow.innerHTML = `<p>${employees[e].name}</p>`;
+ 
                 
 
 
