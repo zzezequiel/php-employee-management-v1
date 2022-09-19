@@ -1,11 +1,14 @@
 <?php
 
+require_once('loginManager.php');
 
 
 if(!empty($_POST['email']) && !empty($_POST['password'])){
-    echo "bien";
-    #validate();
+    
+    validate();
 }
 else{
-    echo "error";
+    #header("location:../../index.php"); brings out problems with local host
 }
+
+#logout
