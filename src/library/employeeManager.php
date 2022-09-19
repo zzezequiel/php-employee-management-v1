@@ -1,7 +1,9 @@
 <?php
 /**
  * EMPLOYEE FUNCTIONS LIBRARY
- *
+ *This file will perform the necessary operations (create, read, update and delete)
+ * which will be called later by the "employeeController.php" file.
+
  * @author: Jose Manuel Orts
  * @date: 11/06/2020
  */
@@ -25,9 +27,13 @@ function updateEmployee(array $updateEmployee)
 }
 
 
-function getEmployee(string $id)
+function getEmployee(string $id) //return one employee
 {
-// TODO implement it
+$data = file_get_contents('../../resources/employees.json');
+$dataDecode = json_decode($data, true); #transform users obj to array
+   $name =$dataDecode[$id];
+   var_dump($name);
+
 }
 
 
