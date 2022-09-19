@@ -1,8 +1,8 @@
 const employees = [];
 const containerRows = document.getElementById("cont-employee");
 
-
-    let data = fetch("../resources/employees.json") // cambiar la url a employee controller
+index = 2;
+fetch("../resources/employeeController.php?name=loadUsers") // cambiar la url a employee controller
         .then(response => {
             return response.json();
     })
