@@ -1,5 +1,12 @@
 <?php
 
+
+
+//ver como acceder al fitchero JSON  y devolver un array por post 
+//carrga el ficher json 
+
+//recibe peticion del fetch del fichero JS del dashbord
+/*
     $name=$_POST['name'];
     $lastName=$_POST['lastName'];
     $email=$_POST['email'];
@@ -12,4 +19,5 @@
     $phone=$_POST['phone'];
     echo $name;
     echo $lastName;
+    */
 ?>

@@ -2,7 +2,7 @@ const employees = [];
 const containerRows = document.getElementById("cont-employee");
 
 
-    let data = fetch("../resources/employees.json")
+    let data = fetch("../resources/employees.json") // cambiar la url a employee controller
         .then(response => {
             return response.json();
     })
