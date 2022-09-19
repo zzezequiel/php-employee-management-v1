@@ -68,8 +68,5 @@ newEmployee.addEventListener("submit", function(e){
     method: 'POST', //send data
     body: datos  //sendign object datos
     })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+       
 })

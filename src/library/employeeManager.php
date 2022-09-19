@@ -7,12 +7,17 @@
  */
 
 function addEmployee(array $newEmployee)
-{
-   
- var_dump ($newEmployee);
-        #header('location:../dashboard.php');
+{  
+    $data = file_get_contents("../../resources/employees.json");
+    $tempArray = json_decode($data);
+    array_push($tempArray, $newEmployee);
+    $jsonData = json_encode($tempArray);
+    file_put_contents('../../resources/employees.json', $jsonData);
+    include("../../assets/js/index.js");
 
- 
+
+    #echo json_encode($newEmployee);
+
 }
 
 

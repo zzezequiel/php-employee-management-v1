@@ -24,8 +24,7 @@ corresponding functions of it that will be in charge of performing the operation
     echo $name;
     echo $lastName;
     */
-?>
-<?php 
+
 
 /*
 This file will handle the HTTP requests that will be made to create, read, update and delete the employees and for this it must include the  “employeeManager.php” file and call the corresponding functions of it that will be in charge of performing the operations.
@@ -59,8 +58,8 @@ var_dump($print);
    # addEmployee();
 #}
 #New Employees
-$newName=$_POST['newName'];
-$newLastName=$_POST['newLastName'];
+#$newName=$_POST['newName'];
+#$newLastName=$_POST['newLastName'];
 #$newEmail=$_POST['newEmail'];
 #$newPhone=$_POST['newPhone'];
 #upploadad the rest latter
@@ -70,28 +69,23 @@ $newLastName=$_POST['newLastName'];
 #$state=$_POST['state'];
 #$age=$_POST['age'];
 #$postal=$_POST['postal'];
-echo json_encode("name: :". $newName." ".$newLastName);
 //echo $newName;
-    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   /*if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
+   if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
       $newEmployee = array(
          "name" => $_POST['newName'],
-         "LastName" => $_POST['newLastName'],
+         "lastName" => $_POST['newLastName'],
          "email"=> $_POST['newEmail'],
-         "phone" => $_POST['newPhone']
+         "phoneNumber" => $_POST['newPhone'],
+         "gender" => '',
+         "city" => '',
+         "street" => '',
+         "age" => '',
+         "postal" => '',
+         "id" => ''
+         
       );
       addEmployee($newEmployee);
+    }
+    
 
-    }else {
-      echo "didnt work";
-    }*/
