@@ -8,7 +8,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     validate();
 }
 else{
-    header("location:../../index.php")
+    #header("location:../../index.php"); brings out problems with local host
 }
 
 #logout

@@ -8,7 +8,8 @@
 
 function addEmployee(array $newEmployee)
 {
-// TODO implement it
+    $newEmployee = "worked";
+ var_dump($newEmployee);
 }
 
 
