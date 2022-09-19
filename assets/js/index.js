@@ -7,7 +7,9 @@ const containerRows = document.getElementById("cont-employee");
             return response.json();
     })
         .then(jsondata => {
-                
+            
+        
+
                 
             for(let e = 0;e<jsondata.length;e++){
                 employees.push(jsondata[e]); //fill employees array
@@ -32,7 +34,8 @@ const containerRows = document.getElementById("cont-employee");
                 
                 `;
                 
-                //add
+                
+                
 
 
                 
@@ -51,3 +54,15 @@ const containerRows = document.getElementById("cont-employee");
 
 
 
+//add employee
+
+let newEmployee = document.getElementById('newEmployee');
+
+newEmployee.addEventListener("submit", function(e){
+    e.preventDefault();
+    let datos = new FormData(newEmployee);
+    fetch('http://localhost/php-employee-management-v1/src/library/employeeController.php',{
+    method: 'POST',
+    body: datos
+    })
+})

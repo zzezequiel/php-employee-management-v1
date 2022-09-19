@@ -5,22 +5,31 @@ This file will handle the HTTP requests that will be made to create, read, updat
 */
 include('employeeManager.php');
 
-
-$print = "hola funciono";
-var_dump($print);
- getEmployee(3);
-
-
-//recibe el fetch del JS y llama la funcion
-#if(isset($_POST['add'])){
-include('employeeManager.php');
-
-   #Employees
-   
+#New Employees
+$newName=$_POST['newName'];
+$newLastName=$_POST['newLastName'];
+$newEmail=$_POST['newEmail'];
+$newPhone=$_POST['newPhone'];
+#upploadad the rest latter
+#$gender=$_POST['gender'];
+#$city=$_POST['city'];
+#$street=$_POST['street'];
+#$state=$_POST['state'];
+#$age=$_POST['age'];
+#$postal=$_POST['postal'];
+echo json_encode($newName);
     
-
-
-    if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /*if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
       $newEmployee = array(
          "name" => $_POST['newName'],
          "LastName" => $_POST['newLastName'],
@@ -31,4 +40,4 @@ include('employeeManager.php');
 
     }else {
       echo "didnt work";
-    }
+    }*/

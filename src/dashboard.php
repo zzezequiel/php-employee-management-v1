@@ -36,7 +36,7 @@
             </div>
 
             <div class="collapse bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2" id="collapseExample">
-              <form id="newEmployee" class="row" action="http://localhost/php-employee-management-v1/src/library/employeeController.php" method="POST">
+              <form id="newEmployee" class="row">
                     <div class="col text-start fs-5"><input type="text" name="newName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newLastName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newEmail"></div>
@@ -46,9 +46,9 @@
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                       </svg>
                     </button>
-                    
-              </div>
+              </form>     
             </div>
+            
 
             <div class="bg-body rounded shadow-sm container-xl" id="cont-employee">
                 
