@@ -1,16 +1,15 @@
 <?php 
-#include('employeeManager.php');
+include('employeeManager.php');
 
 
-$print = "hola funciono";
-var_dump($print);
-
-
-
-#if(isset($_POST['add'])){
+    $name=$_POST['name'];
+    $lastName=$_POST['lastName'];
+    $email=$_POST['email'];
+    $gender=$_POST['gender'];
+    $city=$_POST['city'];
+    $street=$_POST['street'];
+    $state=$_POST['state'];
+    $age=$_POST['age'];
+    $postal=$_POST['postal'];
+    $phone=$_POST['phone'];
     
-#$add = $_POST['add'];
-    
-    
-   # addEmployee();
-#}
