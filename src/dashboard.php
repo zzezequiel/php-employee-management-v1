@@ -36,16 +36,16 @@
             </div>
 
             <div class="collapse bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2" id="collapseExample">
-              <form id="newEmployee" class="row">
-                    <div class="col text-start fs-4"><input type="text" name="name"></div>
-                    <div class="col text-start fs-4"><input type="text" name="lastName"></div>
-                    <div class="col text-start fs-4"><input type="text" name="email"></div>
-                    <div class="col text-start fs-4"><input type="text" name="phone"></div>
-                    <div class="col text-start fs-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="45" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+              <form id="newEmployee" class="row" action="http://localhost/php-employee-management-v1/src/library/employeeController.php" method="POST">
+                    <div class="col text-start fs-5"><input type="text" name="newName"></div>
+                    <div class="col text-start fs-5"><input type="text" name="newLastName"></div>
+                    <div class="col text-start fs-5"><input type="text" name="newEmail"></div>
+                    <div class="col text-start fs-5"><input type="text" name="newPhone"></div>
+                    <button class="col fs-6 " type="submit">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-plus text-end" viewBox="0 0 16 16">
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                       </svg>
-                    </div>
+                    </button>
                     
               </div>
             </div>

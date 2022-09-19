@@ -8,8 +8,10 @@
 
 function addEmployee(array $newEmployee)
 {
-    $newEmployee = "worked";
+   
  var_dump($newEmployee);
+        #header('location:../dashboard.php');
+
 }
 
 

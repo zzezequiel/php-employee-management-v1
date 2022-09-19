@@ -1,15 +1,20 @@
 <?php 
 include('employeeManager.php');
 
-
-    $name=$_POST['name'];
-    $lastName=$_POST['lastName'];
-    $email=$_POST['email'];
-    $gender=$_POST['gender'];
-    $city=$_POST['city'];
-    $street=$_POST['street'];
-    $state=$_POST['state'];
-    $age=$_POST['age'];
-    $postal=$_POST['postal'];
-    $phone=$_POST['phone'];
+   #Employees
+   
     
+
+
+    if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
+      $newEmployee = array(
+         "name" => $_POST['newName'],
+         "LastName" => $_POST['newLastName'],
+         "email"=> $_POST['newEmail'],
+         "phone" => $_POST['newPhone']
+      );
+      addEmployee($newEmployee);
+
+    }else {
+      echo "didnt work";
+    }
