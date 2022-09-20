@@ -6,6 +6,14 @@
  * @date: 11/06/2020
  */
 
+
+function loadAllEmployees (){
+    $allEmployees = file_get_contents("../../resources\employees.json");
+    return $allEmployees;
+}
+
+
+
 function addEmployee(array $newEmployee)
 {  
     $data = file_get_contents("../../resources/employees.json");

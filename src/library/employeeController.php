@@ -11,6 +11,65 @@ corresponding functions of it that will be in charge of performing the operation
 
 //recibe peticion del fetch del fichero JS del dashbord
 /*
+   
+
+/*
+This file will handle the HTTP requests that will be made to create, read, update and delete the employees and for this it must include the  “employeeManager.php” file and call the corresponding functions of it that will be in charge of performing the operations.
+*/
+include('employeeManager.php');
+
+
+if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
+   echo loadAllEmployees();
+}
+
+   
+   if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
+      $newEmployee = array(
+         "name" => $_POST['newName'],
+         "lastName" => $_POST['newLastName'],
+         "email"=> $_POST['newEmail'],
+         "phoneNumber" => $_POST['newPhone'],
+         "gender" => '',
+         "city" => '',
+         "street" => '',
+         "age" => '',
+         "postal" => '',
+         "id" => ''
+         
+      );
+      addEmployee($newEmployee);
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
     $name=$_POST['name'];
     $lastName=$_POST['lastName'];
     $email=$_POST['email'];
@@ -26,11 +85,39 @@ corresponding functions of it that will be in charge of performing the operation
     */
 
 
-/*
-This file will handle the HTTP requests that will be made to create, read, update and delete the employees and for this it must include the  “employeeManager.php” file and call the corresponding functions of it that will be in charge of performing the operations.
-*/
-include('employeeManager.php');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 /*
 $print = "hola funciono";
 var_dump($print);
@@ -70,22 +157,3 @@ var_dump($print);
 #$age=$_POST['age'];
 #$postal=$_POST['postal'];
 //echo $newName;
-   
-   if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
-      $newEmployee = array(
-         "name" => $_POST['newName'],
-         "lastName" => $_POST['newLastName'],
-         "email"=> $_POST['newEmail'],
-         "phoneNumber" => $_POST['newPhone'],
-         "gender" => '',
-         "city" => '',
-         "street" => '',
-         "age" => '',
-         "postal" => '',
-         "id" => ''
-         
-      );
-      addEmployee($newEmployee);
-    }
-    
-

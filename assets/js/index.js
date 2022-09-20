@@ -1,15 +1,11 @@
 const employees = [];
 const containerRows = document.getElementById("cont-employee");
 
-index = 2;
-var data= fetch("../resources/employees.json") // cambiar la url a employee controller
-        .then(response => {
-            return response.json();
-    })
+function loadAllEmployees(){
+fetch("../src/library/employeeController.php?action=listEmployees" ,{method: "GET"}) // cambiar la url a employee controller
+        .then(response => response.json())
         .then(jsondata => {
             
-        
-
                 
             for(let e = 0;e<jsondata.length;e++){
                 employees.push(jsondata[e]); //fill employees array
@@ -52,6 +48,9 @@ var data= fetch("../resources/employees.json") // cambiar la url a employee cont
          }
     });
 
+}
+
+
 
 
 //add employee
@@ -70,3 +69,5 @@ newEmployee.addEventListener("submit", function(e){
     })
        
 })
+
+loadAllEmployees();
