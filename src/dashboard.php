@@ -37,6 +37,7 @@
 
             <div class="collapse bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2" id="collapseExample">
               <form id="newEmployee" class="row">
+                    <div class="col text-start fs-5"><input type="hidden" name="id" value="null"></div>
                     <div class="col text-start fs-5"><input type="text" name="newName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newLastName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newEmail"></div>

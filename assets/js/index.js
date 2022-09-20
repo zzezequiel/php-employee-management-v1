@@ -5,14 +5,13 @@ function loadAllEmployees() {                                       //its not ne
     fetch("./library/employeeController.php?action=listEmployees", { method: "GET" }) // cambiar la url a employee controller
         .then(response => response.json())
         .then(jsondata => {
-            
+            console.log(jsondata);
             renderEmployees(jsondata);
-        })
-    }
+    })
+}
             
 function renderEmployees(jsondata) {
-    
-      
+   
             for (let e = 0; e < jsondata.length; e++) {
                 employees.push(jsondata[e]); //fill employees array
             
@@ -21,6 +20,7 @@ function renderEmployees(jsondata) {
                 employRow.className = "d-flex justify-content-between  mt-2 pb-2";
                 containerRows.appendChild(employRow); //add to div claas container1 
                 employRow.innerHTML = `<div type="button" class="container row border-bottom mt-2 pb-2" id="employeeInfo">
+                 <div class="col text-start fs-4">${employees[e].id}</div>
                     <div class="col text-start fs-4">${employees[e].name}</div>
                     <div class="col text-start fs-4">${employees[e].lastName}</div>
                     <div class="col text-start fs-4">${employees[e].email}</div>
@@ -44,21 +44,13 @@ function renderEmployees(jsondata) {
                 location.href = "http://localhost/php-employee-management-v1/src/employee.php";
 
                 })
-                
-                
-
-         }
-    };
-
-
-
-   
+           }
+    }
 
 
 //add employee
 
 let newEmployee = document.getElementById('newEmployee');
-
 newEmployee.addEventListener("submit", function(e){
     e.preventDefault();
     let datos = new FormData(newEmployee);
@@ -73,3 +65,9 @@ newEmployee.addEventListener("submit", function(e){
 })
 
 loadAllEmployees();
+
+
+let dashboardNav = document.getElementById('dashboard-link');
+newEmployee.addEventListener("click", function (e) {
+    location.href = "http://localhost/php-employee-management-v1/src/dashboard.php";
+})

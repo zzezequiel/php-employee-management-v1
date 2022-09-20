@@ -3,15 +3,7 @@
 *This file will handle the HTTP requests that will be made to create, read, update and delete 
 * the employees and for this it must include the  “employeeManager.php” file and call the 
 corresponding functions of it that will be in charge of performing the operations.
-/
 
-
-//ver como acceder al fitchero JSON  y devolver un array por post 
-//carrga el ficher json 
-
-//recibe peticion del fetch del fichero JS del dashbord
-/*
-   
 
 /*
 This file will handle the HTTP requests that will be made to create, read, update and delete the employees and for this it must include the  “employeeManager.php” file and call the corresponding functions of it that will be in charge of performing the operations.
@@ -24,22 +16,28 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
 }
 
    
-   if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
-      $newEmployee = array(
+if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
+ //  $totalemployees= loadAllEmployees();
+  // $newId= getNextIdentifier($totalemployees);
+   $newEmployee = array(
+      "id" => '',
          "name" => $_POST['newName'],
          "lastName" => $_POST['newLastName'],
          "email"=> $_POST['newEmail'],
          "phoneNumber" => $_POST['newPhone'],
          "gender" => '',
          "city" => '',
+         
          "street" => '',
          "age" => '',
-         "postal" => '',
-         "id" => ''
+         "postal" => ''
          
+         
+         //needs to add id and check the keys
       );
-      addEmployee($newEmployee);
-    }
+      
+    addEmployee($newEmployee);
+}
     
 
 
