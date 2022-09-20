@@ -8,7 +8,7 @@
 
 
 function loadAllEmployees (){
-    $allEmployees = file_get_contents("../../resources\employees.json");
+    $allEmployees = file_get_contents("../../resources/employees.json");
     return $allEmployees;
 }
 

@@ -20,7 +20,7 @@ include('employeeManager.php');
 
 
 if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
-   echo loadAllEmployees();
+   echo loadAllEmployees(); //function from manager file
 }
 
    

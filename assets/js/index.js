@@ -1,15 +1,21 @@
 const employees = [];
 const containerRows = document.getElementById("cont-employee");
 
-function loadAllEmployees(){
-fetch("../src/library/employeeController.php?action=listEmployees" ,{method: "GET"}) // cambiar la url a employee controller
+function loadAllEmployees() {                                       //its not necessary to specify GET method as it is default
+    fetch("./library/employeeController.php?action=listEmployees", { method: "GET" }) // cambiar la url a employee controller
         .then(response => response.json())
         .then(jsondata => {
             
-                
-            for(let e = 0;e<jsondata.length;e++){
+            renderEmployees(jsondata);
+        })
+    }
+            
+function renderEmployees(jsondata) {
+    
+      
+            for (let e = 0; e < jsondata.length; e++) {
                 employees.push(jsondata[e]); //fill employees array
-              
+            
                 let employRow = document.createElement("div");  
                 
                 employRow.className = "d-flex justify-content-between  mt-2 pb-2";
@@ -30,11 +36,7 @@ fetch("../src/library/employeeController.php?action=listEmployees" ,{method: "GE
                 
                 `;
                 
-                
-                
-
-
-                
+              
                 //Page employee
                 $employeeInfo = document.getElementById('employeeInfo');
 
@@ -46,11 +48,11 @@ fetch("../src/library/employeeController.php?action=listEmployees" ,{method: "GE
                 
 
          }
-    });
-
-}
+    };
 
 
+
+   
 
 
 //add employee
