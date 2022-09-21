@@ -5,7 +5,7 @@ function loadAllEmployees() {                                       //its not ne
     fetch("./library/employeeController.php?action=listEmployees", { method: "GET" }) // cambiar la url a employee controller
         .then(response => response.json())
         .then(jsondata => {
-            //console.log(jsondata);
+            console.log(jsondata);
             renderEmployees(jsondata);
     })
 }
