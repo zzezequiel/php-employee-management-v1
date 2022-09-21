@@ -6,7 +6,16 @@
  * @date: 11/06/2020
  */
 
-function addEmployee(array $newEmployee)
+
+function loadAllEmployees (){
+    $allEmployees = file_get_contents("../../resources/employees.json");
+    return $allEmployees;
+    
+}
+
+
+
+function addEmployee(array $newEmployee)   
 {  
     $data = file_get_contents("../../resources/employees.json");
     $tempArray = json_decode($data);
@@ -16,7 +25,7 @@ function addEmployee(array $newEmployee)
     include("../../assets/js/index.js");
 
 
-    #echo json_encode($newEmployee);
+    echo json_encode($newEmployee);
 
 }
 
@@ -35,7 +44,9 @@ function updateEmployee(array $updateEmployee)
 
 function getEmployee(string $id)
 {
-// TODO implement it
+    $allEmployees = file_get_contents("../../resources/employees.json");
+    //return $allEmployees[$id]                    //revisar id
+
 }
 
 
@@ -52,5 +63,10 @@ function getQueryStringParameters(): array
 
 function getNextIdentifier(array $employeesCollection): int
 {
-// TODO implement it
+// code to get the id at add employee
+  $totalEmployess=sizeOf($employeesCollection);
+  return $totalEmployess;
+  
+  var_dump($totalEmployess);
+
 }
