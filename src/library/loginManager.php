@@ -1,12 +1,8 @@
 <?php 
-<<<<<<< HEAD
-#include('loginController.php');
-=======
 
 #require_once('loginController.php');
 
 
->>>>>>> Z
 function validate(){
 
     $data = file_get_contents('../../resources/users.json');
@@ -21,6 +17,10 @@ function validate(){
 
         
     if($emailInput === $emailServer && password_verify($passwordInput, $passwordServer)){  #password_verify = decrypt $passwordServer
+        session_start();
+        $_SESSION['start'] = time();
+        include("sessionHelper.php");
+        
         header('location:../dashboard.php');
     }
    else{
@@ -31,3 +31,10 @@ function validate(){
    
 }
 
+function logOut () {
+    session_start();
+    session_unset();
+    session_destroy();
+    header('location:../../index.php');
+    
+}

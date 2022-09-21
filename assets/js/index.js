@@ -86,16 +86,6 @@ newEmployee.addEventListener("submit", function (e) {
                 
 
 
-/*
-
-fetch("./library/employeeController.php?action=reloadEmployees", { method: "GET" }) // cambiar la url a employee controller
-.then(response2 => response2.json())
-.then(jsondata2 => 
-    //console.log(jsondata);
-    console.log(jsondata2));
-        
-
-*/ 
    
 
 

@@ -11,7 +11,7 @@ else{
     #header("location:../../index.php"); brings out problems with local host
 }
 
-if(isset($_GET['action'] )&& $_GET['action']=="logout"){
-header('Location: index.php');
+if(isset($_POST['action'] )&& $_POST['action']=="logout"){
+logOut();
 }
 #logout

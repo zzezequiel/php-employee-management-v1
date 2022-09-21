@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 if(isset($_GET['status'])){
     if($_GET['status']=='error'){
         echo "<div class='alert alert-danger alert-dismissible fade show'>
