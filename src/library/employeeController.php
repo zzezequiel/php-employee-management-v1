@@ -19,9 +19,10 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
 
 
 if(isset($_GET["action"])&& $_GET["action"]=="delete"){
-   //echo "hola";
+   
    $id=$_GET["id"];
-   echo deleteEmployees($id); //function from manager file
+   //echo $id;
+  echo deleteEmployee(11); //function from manager file
 }
 
 
@@ -30,7 +31,7 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
 
      /* $employeesCollection = loadAllEmployees();
       $getTotalId = getNextIdentifier($employeesCollection);
-      $newId = $getTotalId + 1;*/
+      $newId = $getTotalId + 1; */
    
       
    $newEmployee = array(
@@ -51,7 +52,6 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
 
 }
     
-
 
 
 

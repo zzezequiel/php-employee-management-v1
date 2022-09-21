@@ -1,5 +1,5 @@
 const employees = [];
-    
+console.log("hola");
 const containerRows = document.getElementById("cont-employee");
 
 function loadAllEmployees() {                                       //its not necessary to specify GET method as it is default
@@ -12,13 +12,14 @@ function loadAllEmployees() {                                       //its not ne
 }
             
 function renderEmployees(employees) {
-
+    console.log("render");
+    
     while (containerRows.firstChild) {
         containerRows.removeChild(containerRows.firstChild);
     }
   
     
-    for (let e = 0; e < employees.length; e++) {      
+    for (let e = 0; e < employees.length; e++) {
         let employRow = document.createElement("div");
                 
         employRow.className = "d-flex justify-content-between  mt-2 pb-2";
@@ -48,21 +49,27 @@ function renderEmployees(employees) {
         })
         //DELETE
         let id = employees[e].id;
-        console.log(id);
+        // console.log(id);
         let deleteEmployee = document.getElementById(`delete${id}`);
-        deleteEmployee.addEventListener("click",deleteCall);
+        let targetId = deleteEmployee.getAttribute('id');
+        targetId = targetId.substring(6);
+      
+        // console.log(targetId);
+        deleteEmployee.addEventListener("click", function () {
+            deleteCall(targetId);
+    })
             
 
     
 
-        function deleteCall(id) {
-            console.log(id);
-            fetch(`./library/employeeController.php?action=delete$id=${id}`)
+        function deleteCall(targetId) {
+            console.log("target:"+targetId);
+            fetch(`./library/employeeController.php?action=delete&id=${targetId}`)
             .then(res => res.json()) ///response.text para vererrores
             .then(data => {
-                console.log(id);
+              console.log(data);
               
-               // renderEmployees(data);
+                renderEmployees(data);
             });   
                 //no esta llegando el id hacer funcion y pasar parametro...
                     
