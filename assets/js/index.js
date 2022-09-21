@@ -11,13 +11,16 @@ function loadAllEmployees() {                                       //its not ne
     })
 }
             
-function renderEmployees(jsondata) {
+function renderEmployees(employees) {
 
-    containerRows.innerHTML = "";
+    while (containerRows.firstChild) {
+        containerRows.removeChild(containerRows.firstChild);
+    }
+  //  containerRows.innerHTML = "";
     
     
-            for (let e = 0; e < jsondata.length; e++) {
-                employees.push(jsondata[e]); //fill employees array
+            for (let e = 0; e < employees.length; e++) {
+              //  employees.push(jsondata[e]); //fill employees array
             
                 let employRow = document.createElement("div");  
                 

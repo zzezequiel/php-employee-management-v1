@@ -36,21 +36,9 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
          "postal" => ''
       );
 
-<<<<<<< HEAD
-    
-    
-
-
-
-  //  loadAllEmployees();
-
-   // $employeesCollection = loadAllEmployees();
-   //$newId= getNextIdentifier($employeesCollection);
-=======
       addEmployee($newEmployee);
 
 
->>>>>>> develop
 }
     
 
