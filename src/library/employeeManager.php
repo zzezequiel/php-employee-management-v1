@@ -18,14 +18,15 @@ function loadAllEmployees (){
 function addEmployee(array $newEmployee)   
 {  
     $data = file_get_contents("../../resources/employees.json");
-    $tempArray = json_decode($data);
+    $tempArray = json_decode($data,true);
     array_push($tempArray, $newEmployee);
     $jsonData = json_encode($tempArray);
     file_put_contents('../../resources/employees.json', $jsonData);
-    include("../../assets/js/index.js");
+ //   include("../../assets/js/index.js");
 
 
-    echo json_encode($newEmployee);
+   echo $jsonData;
+  
 
 }
 
