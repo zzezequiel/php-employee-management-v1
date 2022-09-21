@@ -15,18 +15,22 @@ function loadAllEmployees (){
 
 
 
-function addEmployee(array $newEmployee)   
+function addEmployee($newEmployee)   
 {  
-    $data = file_get_contents("../../resources/employees.json");
-    $tempArray = json_decode($data);
+
+    $data = loadAllEmployees();
+
+    $tempArray = json_decode($data, true);
+
+    $newEmployee["id"] = end($tempArray)["id"]+1;
+    
     array_push($tempArray, $newEmployee);
+    
     $jsonData = json_encode($tempArray);
+
     file_put_contents('../../resources/employees.json', $jsonData);
-    include("../../assets/js/index.js");
-
-
-    echo json_encode($newEmployee);
-
+    
+  
 }
 
 
@@ -64,9 +68,8 @@ function getQueryStringParameters(): array
 function getNextIdentifier(array $employeesCollection): int
 {
 // code to get the id at add employee
-  $totalEmployess=sizeOf($employeesCollection);
-  return $totalEmployess;
+ /* $totalEmployess=count($employeesCollection);
+  echo $totalEmployess;*/
   
-  var_dump($totalEmployess);
 
 }
