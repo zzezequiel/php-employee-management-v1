@@ -1,7 +1,9 @@
 const employees = [];
+    
 const containerRows = document.getElementById("cont-employee");
 const dashboard = document.getElementById("dash");
 const emplo = document.getElementById("emplo");
+
 function loadAllEmployeesJS() {     
     dashboard.style.color = "blue";
                                       //its not necessary to specify GET method as it is default
@@ -13,14 +15,20 @@ function loadAllEmployeesJS() {
     })
 }
             
-function renderEmployees(jsondata) {
-   
-            for (let e = 0; e < jsondata.length; e++) {
-                employees.push(jsondata[e]); //fill employees array
+function renderEmployees(employees) {
+
+    while (containerRows.firstChild) {
+        containerRows.removeChild(containerRows.firstChild);
+    }
+  //  containerRows.innerHTML = "";
+    
+    
+            for (let e = 0; e < employees.length; e++) {
+              //  employees.push(jsondata[e]); //fill employees array
             
                 let employRow = document.createElement("div");  
                 
-                employRow.className = "d-flex justify-content-between  mt-2 pb-2";
+                employRow.className = "d-flex justify-content-between  mt-2 pb-2 ";
                 containerRows.appendChild(employRow); //add to div claas container1 
                 employRow.innerHTML = `<div type="button" class="container row border-bottom mt-2 pb-2" id="employeeInfo">
                     <div class="col text-start fs-4">${employees[e].name}</div>
@@ -40,7 +48,7 @@ function renderEmployees(jsondata) {
                 
               
                 //Page employee
-                $employeeInfo = document.getElementById('employeeInfo');
+                $employeeInfo = document.getElementById('employeeInfo');  //add dinamic id to buttons//add dinamic id to buttons  `${employees[e].id}`
 
                 $employeeInfo.addEventListener("click", function(){
                 location.href = "http://localhost/php-employee-management-v1/src/employee.php";
@@ -49,37 +57,47 @@ function renderEmployees(jsondata) {
 
 
                 })
-           }
+                    }
     }
 
 
 //add employee
 
 let newEmployee = document.getElementById('newEmployee');
-newEmployee.addEventListener("submit", function(e){
+newEmployee.addEventListener("submit", function (e) {
     e.preventDefault();
     let datos = new FormData(newEmployee);
-    //console.log(datos);
-    //console.log(datos.get('newName'))
+    
 
-    fetch('http://localhost/php-employee-management-v1/src/library/employeeController.php',{
-    method: 'POST', //send data
-    body: datos  //sendign object datos
+    fetch('http://localhost/php-employee-management-v1/src/library/employeeController.php', {
+        method: 'POST', //send data
+        body: datos  //sendign object datos
     })
-})
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+          //  loadAllEmployees();
+          
+            renderEmployees(data);
+        });
+        
+    
+} )    
+                
+
+
+/*
+
+fetch("./library/employeeController.php?action=reloadEmployees", { method: "GET" }) // cambiar la url a employee controller
+.then(response2 => response2.json())
+.then(jsondata2 => 
+    //console.log(jsondata);
+    console.log(jsondata2));
+        
+
+*/ 
+   
+
 
 loadAllEmployeesJS();
 
-/*
-let dashboardNav = document.getElementById('dashboard-link');
-newEmployee.addEventListener("click", function (e) {
-    location.href = "http://localhost/php-employee-management-v1/src/dashboard.php";
-})
-*/
-
-
-//delete
-/*let deleteEmployee = document.querySelectorAll("delete");
-deleteEmployee.addEventListener("click", function(){
-    //get php function delete
-})*/

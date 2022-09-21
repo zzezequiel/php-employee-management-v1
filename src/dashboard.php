@@ -35,14 +35,15 @@
               </div>
             </div>
 
-            <div class="collapse bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2" id="collapseExample">
+            <div class="py-2 collapse bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2" id="collapseExample">
               <form id="newEmployee" class="row">
                     <div class="col text-start fs-5"><input type="text" name="newName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newLastName"></div>
-                    <div class="col text-start fs-5"><input type="text" name="newEmail"></div>
-                    <div class="col text-start fs-5"><input type="text" name="newPhone"></div>
-                    <button class="col fs-6" type="submit">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-plus text-end" viewBox="0 0 16 16">
+                    <div class="col text-start fs-5"><input type="email" name="newEmail"></div>
+                    <div class="col text-start fs-5"><input type="num" name="newPhone"></div>
+                    <button class="btn-style-none col fs-6 me-5 text-end" style="all:unset; cursor: pointer" type="button" type="submit" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                       </svg>
                     </button>
