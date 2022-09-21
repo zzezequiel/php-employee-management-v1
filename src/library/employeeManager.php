@@ -30,7 +30,8 @@ function addEmployee($newEmployee)
 
     file_put_contents('../../resources/employees.json', $jsonData);
     
-  
+    echo require_once("../assets/js/index.js");
+    
 }
 
 

@@ -1,7 +1,10 @@
 const employees = [];
 const containerRows = document.getElementById("cont-employee");
-
-function loadAllEmployees() {                                       //its not necessary to specify GET method as it is default
+const dashboard = document.getElementById("dash");
+const emplo = document.getElementById("emplo");
+function loadAllEmployeesJS() {     
+    dashboard.style.color = "blue";
+                                      //its not necessary to specify GET method as it is default
     fetch("./library/employeeController.php?action=listEmployees", { method: "GET" }) // cambiar la url a employee controller
         .then(response => response.json())
         .then(jsondata => {
@@ -41,6 +44,9 @@ function renderEmployees(jsondata) {
 
                 $employeeInfo.addEventListener("click", function(){
                 location.href = "http://localhost/php-employee-management-v1/src/employee.php";
+                dashboard.style.color = "black";
+                emplo.style.color = "blue";
+
 
                 })
            }
@@ -62,7 +68,7 @@ newEmployee.addEventListener("submit", function(e){
     })
 })
 
-loadAllEmployees();
+loadAllEmployeesJS();
 
 /*
 let dashboardNav = document.getElementById('dashboard-link');
