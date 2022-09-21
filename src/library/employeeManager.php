@@ -65,6 +65,8 @@ function getNextIdentifier(array $employeesCollection): int
 {
 // code to get the id at add employee
   $totalEmployess=sizeOf($employeesCollection);
-  echo $totalEmployess;
+  return $totalEmployess;
+  
+  var_dump($totalEmployess);
 
 }

@@ -17,8 +17,9 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
 
    
 if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
- //  $totalemployees= loadAllEmployees();
-  // $newId= getNextIdentifier($totalemployees);
+
+   
+
    $newEmployee = array(
       "id" => '',
          "name" => $_POST['newName'],
@@ -27,7 +28,6 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
          "phoneNumber" => $_POST['newPhone'],
          "gender" => '',
          "city" => '',
-         
          "street" => '',
          "age" => '',
          "postal" => ''
@@ -37,6 +37,9 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
       );
       
     addEmployee($newEmployee);
+
+    $employeesCollection = loadAllEmployees();
+   $newId= getNextIdentifier($employeesCollection);
 }
     
 
