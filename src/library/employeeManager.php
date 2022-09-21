@@ -34,15 +34,28 @@ function addEmployee($newEmployee)
 
    echo $jsonData;
   
-
-    
-  
 }
 
 
-function deleteEmployee(string $id)
-{
-// TODO implement it
+function deleteEmployee($id){
+// read json file
+$data = loadAllEmployees();
+// decode json to associative array
+$tempArray = json_decode($data, true);
+
+// delete dat
+for($i=0;$i<count($tempArray); $i++){
+    if(strval($tempArray[$id]['id'])===$id){
+        unset($tempArray[$i]);
+    }
+ 
+}
+$jsonData = json_encode($tempArray);
+
+// encode array to json and save to file
+file_put_contents('../../resources/employees.json', $jsonData);
+
+//echo $jsonData;
 }
 
 

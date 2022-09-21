@@ -15,7 +15,17 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
    echo loadAllEmployees(); //function from manager file
 }
 
-   
+
+
+
+if(isset($_GET["action"])&& $_GET["action"]=="delete"){
+   //echo "hola";
+   $id=$_GET["id"];
+   echo deleteEmployees($id); //function from manager file
+}
+
+
+
 if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
 
      /* $employeesCollection = loadAllEmployees();
