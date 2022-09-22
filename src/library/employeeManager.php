@@ -5,6 +5,7 @@
  * @author: Jose Manuel Orts
  * @date: 11/06/2020
  */
+session_start();
 
 
 function loadAllEmployees (){
@@ -67,9 +68,21 @@ function updateEmployee(array $updateEmployee)
 
 function getEmployee(string $id)
 {
-    $allEmployees = file_get_contents("../../resources/employees.json");
-    //return $allEmployees[$id]                    //revisar id
+    $data = loadAllEmployees();
 
+   $employees = json_decode($data, true);
+for($i=1;$i<count($employees); $i++){
+    if(strval($employees[$i]['id'])===$id){
+        $employeeSelected=$employees[$i];  
+       // echo json_encode($employeeSelected);  
+     $_SESSION["employeeSelected"]=$employeeSelected;
+    }
+   
+    
+    
+}
+header("Location:../employee.php");
+  
 }
 
 

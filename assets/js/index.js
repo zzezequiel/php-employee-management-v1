@@ -39,32 +39,40 @@ function renderEmployees(employees) {
                     </div>
                 `;
                 
-              
+    //get IDs
+         let id = employees[e].id;
+        
         //REdirect Page employee
-        $employeeInfo = document.getElementById(`${employees[e].id}`);  //add dinamic id to buttons//add dinamic id to buttons  `${employees[e].id}`
+        employeeInfo = document.getElementById(`${employees[e].id}`);  //add dinamic id to buttons//add dinamic id to buttons  `${employees[e].id}`
+        let targetEmId = employeeInfo.getAttribute('id');
+      
 
-        $employeeInfo.addEventListener("click", function () {
-            location.href = "http://localhost/php-employee-management-v1/src/employee.php";
+        employeeInfo.addEventListener("click", function () {
+            location.href = `./library/employeeController.php?action=openEmployee&id=${targetEmId}`;
 
         })
+
+
+
+
         //DELETE
-        let id = employees[e].id;
-        // console.log(id);
+       
+   
         let deleteEmployee = document.getElementById(`delete${id}`);
-        let targetId = deleteEmployee.getAttribute('id');
-        targetId = targetId.substring(6);
+        let targetDelId = deleteEmployee.getAttribute('id');
+        targetDelId = targetDelId.substring(6);
+        
       
-        // console.log(targetId);
         deleteEmployee.addEventListener("click", function () {
-            deleteCall(targetId);
+            deleteCall(targetDelId);
     })
             
 
     
 
-        function deleteCall(targetId) {
-            console.log("target:"+targetId);
-            fetch(`./library/employeeController.php?action=delete&id=${targetId}`)
+        function deleteCall(targetDelId) {
+            console.log("target:"+targetDelId);
+            fetch(`./library/employeeController.php?action=delete&id=${targetDelId}`)
             .then(res => res.json()) ///response.text para vererrores
             .then(data => {
               console.log(data);

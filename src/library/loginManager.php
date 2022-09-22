@@ -1,12 +1,8 @@
 <?php 
-<<<<<<< HEAD
-#include('loginController.php');
-=======
-
+include('loginController.php');
 #require_once('loginController.php');
 
 
->>>>>>> Z
 function validate(){
 
     $data = file_get_contents('../../resources/users.json');

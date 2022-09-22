@@ -10,23 +10,22 @@ This file will handle the HTTP requests that will be made to create, read, updat
 */
 include('employeeManager.php');
 
-
+//GET EMPLOYEES
 if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
-   echo loadAllEmployees(); //function from manager file
+   echo loadAllEmployees(); //
 }
 
 
 
-
+//DELETE EMPLOYEES
 if(isset($_GET["action"])&& $_GET["action"]=="delete"){
    
    $id=$_GET["id"];
-   //echo $id;
   echo deleteEmployee($id); //function from manager file
 }
 
 
-
+//NEW EMPLOYEE
 if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
 
      /* $employeesCollection = loadAllEmployees();
@@ -49,9 +48,17 @@ if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newE
 
       addEmployee($newEmployee);
 
-
 }
+   
+//OPEN EMPLOYEE INFO
+if(isset($_GET["action"])&& $_GET["action"]=="openEmployee"){
     
+   $id=$_GET["id"];
+  echo getEmployee($id);
+   
+  
+}
+
 
 
 
