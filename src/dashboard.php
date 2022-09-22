@@ -22,11 +22,11 @@
 
             <div class="bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2">
               <div class="row">
-                <div class="col text-start"><h3>Name</h3></div>
-                <div class="col text-start"><h3>Lastname</h3></div>
-                <div class="col text-start"><h3>Email</h3></div>
-                <div class="col text-end"><h3>Phone number</h3></div>
-                <div class="col text-end me-4 btn " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="addEmployee">
+                <div class="col text-start "><h3>Name</h3></div>
+                <div class="col text-start me-5"><h3>Lastname</h3></div>
+                <div class="col text-start ms-5"><h3>Email</h3></div>
+                <div class="col text-end ms-5"><h3>Phone number</h3></div>
+                <div class="col-1 text-end me-4 btn " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="addEmployee">
                     <svg class="fs-1" xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
@@ -40,7 +40,7 @@
                     <div class="col text-start fs-5"><input type="text" name="newName"></div>
                     <div class="col text-start fs-5"><input type="text" name="newLastName"></div>
                     <div class="col text-start fs-5"><input type="email" name="newEmail"></div>
-                    <div class="col text-start fs-5"><input type="num" name="newPhone"></div>
+                    <div class="col text-start fs-5"><input type="tel" name="newPhone"></div>
                     <button class="btn-style-none col fs-6 me-5 text-end" style="all:unset; cursor: pointer" type="submit" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                       <svg xmlns="http://www.w3.org/2000/svg" width="38" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

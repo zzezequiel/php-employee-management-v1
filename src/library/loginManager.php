@@ -1,7 +1,4 @@
 <?php 
-include('loginController.php');
-
-
 
 function validate(){
 
