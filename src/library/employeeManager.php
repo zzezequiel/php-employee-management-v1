@@ -1,10 +1,4 @@
 <?php
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
- * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
 
 
 function loadAllEmployees (){
@@ -29,18 +23,33 @@ function addEmployee($newEmployee)
     $jsonData = json_encode($tempArray);
 
     file_put_contents('../../resources/employees.json', $jsonData);
- //   include("../../assets/js/index.js");
+
 
 
    echo $jsonData;
   
-    
 }
 
 
-function deleteEmployee(string $id)
-{
-// TODO implement it
+function deleteEmployee(string $id){  //esta es la que falla/////////////////////////////////////////////
+// read json file
+$data = loadAllEmployees();
+
+$employees = json_decode($data, true);
+
+// delete dat
+for($i=1;$i<count($employees); $i++){
+    if(strval($employees[$i]['id'])===$id){
+        $employeesPos=array_search($employees[$i],$employees);
+        array_splice($employees,$employeesPos,1);
+        
+    }
+    file_put_contents('../../resources/employees.json',  json_encode($employees));
+}
+
+
+  echo json_encode($employees);
+  
 }
 
 
@@ -73,7 +82,7 @@ function getNextIdentifier(array $employeesCollection): int
 {
 // code to get the id at add employee
  /* $totalEmployess=count($employeesCollection);
-  echo $totalEmployess;*/
+  echo $totalEmployess; */
   
-
 }
+
