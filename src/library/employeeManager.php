@@ -41,26 +41,21 @@ function deleteEmployee(string $id){  //esta es la que falla////////////////////
 // read json file
 $data = loadAllEmployees();
 
-$tempArray = json_decode($data, true);
+$employees = json_decode($data, true);
 
 // delete dat
-for($i=1;$i<count($tempArray); $i++){
-    if(strval($tempArray[$i]['id'])===$id){
-        unset($tempArray[$i]);
+for($i=1;$i<count($employees); $i++){
+    if(strval($employees[$i]['id'])===$id){
+        $employeesPos=array_search($employees[$i],$employees);
+        array_splice($employees,$employeesPos,1);
+        
     }
- 
+    file_put_contents('../../resources/employees.json',  json_encode($employees));
 }
-$jsonData = json_encode($tempArray);
 
-// encode array to json and save to file
-file_put_contents('../../resources/employees.json', $jsonData);
- //echo json_encode($tempArray);
- //echo $id;
- //echo $tempArray;
- //echo $tempArray[$id]['id'];
-  echo $jsonData;
-  //echo json_encode($tempArray[$id]);
-  //echo ($tempArray[$id]['id']);
+
+  echo json_encode($employees);
+  
 }
 
 

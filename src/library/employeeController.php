@@ -22,7 +22,7 @@ if(isset($_GET["action"])&& $_GET["action"]=="delete"){
    
    $id=$_GET["id"];
    //echo $id;
-  echo deleteEmployee(11); //function from manager file
+  echo deleteEmployee($id); //function from manager file
 }
 
 
