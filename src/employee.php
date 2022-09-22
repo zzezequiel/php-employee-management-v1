@@ -25,6 +25,7 @@ $employeeSele= $_SESSION["employeeSelected"];
 ?>
 
   <form class="row g-3" action="library\employeeController.php" method="post">
+  
   <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Name</label>  <!--value with fetch on the jason to autofill the form !!! quit placeholder!!!!! -->
       <input type="text" name="name" class="form-control" id="inputName" value=<?php echo $employeeSele["name"]?> >
@@ -49,7 +50,7 @@ $employeeSele= $_SESSION["employeeSelected"];
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Street Address</label>
-      <input type="text" name="street"  class="form-control" id="inputAddress" value=<?php echo $employeeSele["streetAddress"]?>>
+      <input type="text" name="streetAddress"  class="form-control" id="inputAddress" value=<?php echo $employeeSele["streetAddress"]?>>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">State</label>
@@ -61,21 +62,27 @@ $employeeSele= $_SESSION["employeeSelected"];
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Postal Code</label>
-      <input type="number" name="postal" class="form-control" id="inputPostalCode" value=<?php echo $employeeSele["postalCode"]?>>
+      <input type="number" name="postalCode" class="form-control" id="inputPostalCode" value=<?php echo $employeeSele["postalCode"]?>>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Phone Number</label>
-      <input type="tel" name="phone" class="form-control" id="inputPhone" value=<?php echo $employeeSele["phoneNumber"]?>>
+      <input type="tel" name="phoneNumber" class="form-control" id="inputPhone" value=<?php echo $employeeSele["phoneNumber"]?>>
     </div>
-    
+    <div class="col-md-1">
+      <label for="inputEmail4" class="form-label">Id</label>  <!--value with fetch on the jason to autofill the form !!! quit placeholder!!!!! -->
+      <input type="num" name="id" class="form-control" id="inputName" readonly value=<?php echo intval($employeeSele["id"])?> >
+    </div>
     <!--buttons submit-->
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Return</button>
-    </div>
+      <div class="col-12">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+       
   </form>
+  <!--BUTTON RETURN DASHBOARD-->
+  <form class="col-12" method="POST" action="./dashboard.php">
+      <button type="submit" type="" class="btn btn-primary">Return</button> 
+  </form>
+     
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
