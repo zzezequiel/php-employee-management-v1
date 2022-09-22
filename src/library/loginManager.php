@@ -32,9 +32,8 @@ function validate(){
 }
 
 function logOut () {
-    session_start();
     session_unset();
     session_destroy();
-    header('location:../../index.php');
+    header('location: http://localhost/php-employee-management-v1/index.php');
     
 }

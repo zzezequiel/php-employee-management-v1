@@ -1,6 +1,6 @@
 <?php
 
-require_once('loginManager.php');
+include('loginManager.php');
 
 
 if(!empty($_POST['email']) && !empty($_POST['password'])){
@@ -11,7 +11,7 @@ else{
     #header("location:../../index.php"); brings out problems with local host
 }
 
-if(isset($_POST['action'] )&& $_POST['action']=="logout"){
+if(isset($_GET['action'] )&& $_GET['action']=="logout"){
 logOut();
 }
 #logout
