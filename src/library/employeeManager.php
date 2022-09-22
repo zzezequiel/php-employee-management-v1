@@ -55,10 +55,32 @@ for($i=1;$i<count($employees); $i++){
 }
 
 
-function updateEmployee(array $updateEmployee)
+function updateEmployee($updateEmployee)
 {
-// TODO implement it
+   
+    $data = loadAllEmployees();
+    $employees = json_decode($data, true);
+   
+    for($i=0;$i<count($employees); $i++){
+        if(($employees[$i]['id'])==$updateEmployee['id']){
+        
+            $employees[$i]=$updateEmployee;
+
+        }
+    }    
+           
+        
+      file_put_contents('../../resources/employees.json',json_encode($employees));
+     
+
+
+
 }
+
+
+
+
+
 
 
 function getEmployee(string $id)
@@ -66,7 +88,7 @@ function getEmployee(string $id)
     $data = loadAllEmployees();
 
    $employees = json_decode($data, true);
-for($i=1;$i<count($employees); $i++){
+for($i=0;$i<count($employees); $i++){
     if(strval($employees[$i]['id'])===$id){
         $employeeSelected=$employees[$i];  
        // echo json_encode($employeeSelected);  
@@ -92,11 +114,5 @@ function getQueryStringParameters(): array
 // TODO implement it
 }
 
-function getNextIdentifier(array $employeesCollection): int
-{
-// code to get the id at add employee
- /* $totalEmployess=count($employeesCollection);
-  echo $totalEmployess; */
-  
-}
+
 
