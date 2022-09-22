@@ -86,8 +86,6 @@ newEmployee.addEventListener("submit", function (e) {
                 
 
 
-   
-
 
 loadAllEmployeesJS();
 

@@ -29,7 +29,7 @@ function addEmployee($newEmployee)
     $jsonData = json_encode($tempArray);
 
     file_put_contents('../../resources/employees.json', $jsonData);
- //   include("../../assets/js/index.js");
+ //  include("../../assets/js/index.js");
 
 
    echo $jsonData;

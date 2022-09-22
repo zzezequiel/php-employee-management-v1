@@ -10,10 +10,6 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
    
 if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
 
-     /* $employeesCollection = loadAllEmployees();
-      $getTotalId = getNextIdentifier($employeesCollection);
-      $newId = $getTotalId + 1;*/
-   
       
    $newEmployee = array(
          "id" => 0,
