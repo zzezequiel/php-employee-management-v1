@@ -4,10 +4,12 @@ const containerRows = document.getElementById("cont-employee");
 const dashboard = document.getElementById("dash");
 const emplo = document.getElementById("emplo");
 
-function loadAllEmployeesJS() {     
+function loadAllEmployeesJS() {    
+    //indicate where the user is 
     dashboard.style.color = "blue";
-                                      //its not necessary to specify GET method as it is default
-    fetch("./library/employeeController.php?action=listEmployees", { method: "GET" }) // cambiar la url a employee controller
+    emplo.style.color = "black";
+    
+    fetch("./library/employeeController.php?action=listEmployees", { method: "GET" })  //it's not necessary to specify GET method as it is default
         .then(response => response.json())
         .then(jsondata => {
             console.log(jsondata);
@@ -42,7 +44,7 @@ function renderEmployees(employees) {
                     </div>
                 `;
                 
-    //get IDs
+        //get IDs
          let id = employees[e].id;
         
         //REdirect Page employee
@@ -52,15 +54,10 @@ function renderEmployees(employees) {
 
         employeeInfo.addEventListener("click", function () {
             location.href = `./library/employeeController.php?action=openEmployee&id=${targetEmId}`;
+            
 
         })
-
-
-
-
         //DELETE
-       
-   
         let deleteEmployee = document.getElementById(`delete${id}`);
         let targetDelId = deleteEmployee.getAttribute('id');
         targetDelId = targetDelId.substring(6);
@@ -69,10 +66,6 @@ function renderEmployees(employees) {
         deleteEmployee.addEventListener("click", function () {
             deleteCall(targetDelId);
     })
-            
-
-    
-
         function deleteCall(targetDelId) {
             console.log("target:"+targetDelId);
             fetch(`./library/employeeController.php?action=delete&id=${targetDelId}`)
@@ -81,17 +74,12 @@ function renderEmployees(employees) {
               console.log(data);
               
                 renderEmployees(data);
-            });   
-                //no esta llegando el id hacer funcion y pasar parametro...                
+            });                  
         }
-
     }                     
 }
     
-
-
 //add employee
-
 let newEmployee = document.getElementById('newEmployee');
 newEmployee.addEventListener("submit", function (e) {
     e.preventDefault();

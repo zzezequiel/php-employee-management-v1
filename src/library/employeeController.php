@@ -8,14 +8,12 @@ if(isset($_GET["action"])&&$_GET["action"]=="listEmployees"){
 }
 
 
-
 //DELETE EMPLOYEES
 if(isset($_GET["action"])&& $_GET["action"]=="delete"){
    
    $id=$_GET["id"];
   echo deleteEmployee($id); //function from manager file
 }
-
 
 //NEW EMPLOYEE
 if(!empty($_POST['newName'])&&!empty($_POST['newLastName'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPhone'])){
