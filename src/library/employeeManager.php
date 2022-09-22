@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 
 function loadAllEmployees (){
     $allEmployees = file_get_contents("../../resources/employees.json");
@@ -61,9 +63,21 @@ function updateEmployee(array $updateEmployee)
 
 function getEmployee(string $id)
 {
-    $allEmployees = file_get_contents("../../resources/employees.json");
-    //return $allEmployees[$id]                    //revisar id
+    $data = loadAllEmployees();
 
+   $employees = json_decode($data, true);
+for($i=1;$i<count($employees); $i++){
+    if(strval($employees[$i]['id'])===$id){
+        $employeeSelected=$employees[$i];  
+       // echo json_encode($employeeSelected);  
+     $_SESSION["employeeSelected"]=$employeeSelected;
+    }
+   
+    
+    
+}
+header("Location:../employee.php");
+  
 }
 
 

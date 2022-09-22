@@ -1,6 +1,6 @@
 <?php 
+include('loginController.php');
 
-#require_once('loginController.php');
 
 
 function validate(){
