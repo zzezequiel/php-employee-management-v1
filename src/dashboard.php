@@ -24,13 +24,13 @@ if (!isset($_SESSION["start"])) {
 
 ?>
     
-        <main>
+        <main class= "container">
             
             <!--display employees-->
 
-            <div class="bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2">
+            <div style="background-color: grey"class="bg-body rounded shadow-sm container-xl border-bottom mt-2 pb-2">
               <div class="row">
-                <div class="col text-start "><h3>Name</h3></div>
+                <div class="col text-start"><h3>Name</h3></div>
                 <div class="col text-start me-5"><h3>Lastname</h3></div>
                 <div class="col text-start ms-5"><h3>Email</h3></div>
                 <div class="col text-end ms-5"><h3>Phone number</h3></div>
@@ -59,11 +59,15 @@ if (!isset($_SESSION["start"])) {
             </div>
             
 
-            <div class="bg-body rounded shadow-sm container-xl" id="cont-employee">
+            <div  class="bg-body rounded shadow-sm container-xl" id="cont-employee">
                 
             </div>
 
-        </main>
+        </main>   
+        
+        <!-- Modal -->
+ 
+        
 
 
     <script src="../assets/js/index.js"></script>
