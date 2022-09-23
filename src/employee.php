@@ -75,14 +75,13 @@ $employeeSele= $_SESSION["employeeSelected"];
     <!--buttons submit-->
       <div class="col-12">
       <button type="submit" class="btn btn-primary">Submit</button>
+       <!--BUTTON RETURN DASHBOARD-->
+      <button type="submit" type="" class="btn btn-primary" action="./dashboard.php">Return</button> 
       </div>
        
   </form>
-  <!--BUTTON RETURN DASHBOARD-->
-  <form class="col-12" method="POST" action="./dashboard.php">
-      <button type="submit" type="" class="btn btn-primary">Return</button> 
-  </form>
-     
+ 
+  
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
