@@ -15,6 +15,7 @@ function validate(){
         
     if($emailInput === $emailServer && password_verify($passwordInput, $passwordServer)){  #password_verify = decrypt $passwordServer
         session_start();
+      
         $_SESSION['start'] = time();
         include("sessionHelper.php");
         
@@ -29,6 +30,7 @@ function validate(){
 }
 
 function logOut () {
+    session_start();
     session_unset();
     session_destroy();
     header('location: http://localhost/php-employee-management-v1/index.php');

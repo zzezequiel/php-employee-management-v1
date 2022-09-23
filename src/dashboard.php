@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>employee manager</title>
-
+    <link href="assets\css\main.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <?php include("library\sessionHelper.php"); ?>
   </head>
@@ -15,6 +15,14 @@
     <header>
         <?php include("../assets\html\header.html"); ?>
     </header>
+    <?php
+
+// ACCESS CONTROL 
+if (!isset($_SESSION["start"])) {
+    header("Location: ./../index.php");
+}
+
+?>
     
         <main>
             
