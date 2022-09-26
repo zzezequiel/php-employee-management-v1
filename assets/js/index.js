@@ -45,7 +45,7 @@ function renderEmployees(employees) {
                         </svg>
                     </div>
                     <!--MODAL-->     
-                    <script></script>               
+                               
                     <div class="modal fade" id="modal${employees[e].id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -104,12 +104,10 @@ function renderEmployees(employees) {
 
 function deleteCall(id) {
   
-        fetch(`./library/employeeController.php?action=delete&id=${id}`)
-            .then(res => res.json()) ///response.text para vererrores
-            .then(data => {
-                console.log(data);
-      
-                renderEmployees(data);
+    fetch(`./library/employeeController.php?action=delete&id=${id}`)
+       .then(res => res.json()) ///response.text para vererrores
+       .then(data => {
+            renderEmployees(data);
             });
     
 }
