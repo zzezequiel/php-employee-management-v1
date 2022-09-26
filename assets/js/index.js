@@ -18,17 +18,17 @@ function loadAllEmployeesJS() {
 }
             
 function renderEmployees(employees) {
-    console.log("render");
-    
+ 
+   /*
     while (containerRows.firstChild) {
-        containerRows.removeChild(containerRows.firstChild);
+        containerRows.removeChild(containerRows.firstChild);   //alternative code to remove containerrow content
     }
+    */
+    containerRows.innerHTML = "";
   
     for (let e = 0; e < employees.length; e++) {
         let employRow = document.createElement("div");
-        let id = employees[e].id;
-       
-                
+        let id = employees[e].id;         
         employRow.className = "d-flex justify-content-between  mt-2 pb-1";
         containerRows.appendChild(employRow); //add to div claas container1 
         employRow.innerHTML = `<div type="button" class="container row border-bottom mt-2 pb-2" id="${employees[e].id}">
